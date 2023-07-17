@@ -1,7 +1,5 @@
 FROM mdillon/postgis:10-alpine
 
-USER root
+USER 1001
 
-RUN chown postgres:0 -R ${PGDATA}
-
-USER postgres
+RUN chown -R 1001:0 /var/lib/postgresql/data
